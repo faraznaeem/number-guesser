@@ -10,3 +10,7 @@ const game = document.querySelector('#game'),
       guessInput = document.querySelector('#guess-input'),
       message = document.querySelector('.message');
 
+minNum.textContent = min;
+maxNum.textContent = max;
+
+
