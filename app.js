@@ -18,10 +18,17 @@ guessBtn.addEventListener('click', function(){
     console.log(guess)
 
     if (isNaN(guess) || guess < min || guess > max){
-        setMessage(`Please enter a number between ${min} and ${max}`);
+        setMessage(`Please enter a number between ${min} and ${max}`, 'red');
+    }
+
+    if (guess === winningNum){
+        guessInput.disabled = true;
+        guessInput.style.borderColor = 'green';
+        setMessage(`${winningNum} is correct!`, 'green')
     }
 });
 
-function setMessage(msg){
-    message.textContent = msg
+function setMessage(msg, color){
+    message.style.color = color;
+    message.textContent = msg;
 }
